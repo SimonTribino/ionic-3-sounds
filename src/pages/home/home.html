@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>
+      Animals Sounds APP
+    </ion-title>
+    <ion-buttons end>
+      <button
+        ion-button
+        (click)="orderingAnimals = !orderingAnimals">
+        {{orderingAnimals ? 'Done' : 'Reorder'}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher
+    [enabled]='!orderingAnimals'
+    (ionRefresh)='fetchAnimals($event)'>
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list
+    [reorder]='orderingAnimals'
+    (ionItemReorder)='reorderAnimals($event)'>
+    <ion-item-sliding *ngFor='let animal of animals; let i = index'>
+
+      <ion-item (click)='reproduce(animal)'>
+        <ion-avatar item-start>
+          <img
+            [src]='animal.image'
+            [alt]='animal.name'>
+        </ion-avatar>
+        <h2>{{ animal.name }}</h2>
+        <ion-icon
+          *ngIf='!animal.reproducing'
+          item-right
+          name='play'></ion-icon>
+        <ion-icon
+          *ngIf='animal.reproducing'
+          item-right
+          name='pause'></ion-icon>
+      </ion-item>
+
+      <ion-item-options side='left'>
+        <button
+          ion-button
+          color='primary'>
+          <ion-icon name='text'></ion-icon>
+          Text
+        </button>
+        <button
+          ion-button
+          color='secondary'>
+          <ion-icon name='call'></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+
+      <ion-item-options side='right'>
+        <button
+          ion-button
+          color='danger'
+          (click)='deleteAnimal(i)'>
+          <ion-icon name='trash'></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
