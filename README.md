@@ -1,27 +1,21 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Ionic Sounds
 
-## How to use this template
+This project was generated with [Ionic](http://ionicframework.com/docs/)
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## Ionic Components implemented in this app
++ Header
++ Lists
++ List Reorder
++ Refresher
++ Item Sliding
++ Audio
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+## Prerequisites
+1. Node 6.9.0 or higher, together with NPM 3 or higher
+2. Ionic CLI, to install simply run `sudo npm install -g ionic cordova`
 
-### With the Ionic CLI:
+## Installing Dependencies
+Simply run `npm i`
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
-# ionic-sounds
+## Development server
+Run `ionic serve` for a dev server. Navigate to `http://localhost:8100/`
